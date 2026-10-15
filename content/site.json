@@ -1,0 +1,44 @@
+{
+  "name": "Luzzinterest",
+  "tagline": "Mais que arte, um tributo ao irracional.",
+  "introduction": "Roupas como expressão. Customizações autorais desenvolvidas a partir das suas referências, em projetos criados junto com você. De Natal, RN.",
+  "manifesto": [
+    "Criar é dar forma ao que atravessa a gente. Entre o medo e a sensibilidade, o que era silêncio vira traço, intervenção e roupa.",
+    "O acervo reúne peças da coleção Hipersensível, customizações e encontros com a música. Cada trabalho carrega um jeito próprio de sentir.",
+    "Mais que arte, um tributo ao irracional."
+  ],
+  "location": "Natal, RN",
+  "instagramUrl": "https://www.instagram.com/luzzinterest/",
+  "whatsappUrl": "https://chat.whatsapp.com/Fo9bsCjy1CfIDCqoaqPDoR",
+  "heroImage": "barcellos-04.jpg",
+  "customProcess": {
+    "eyebrow": "04 / COMO NASCE UM CUSTOM",
+    "title": "Cada projeto é único.",
+    "introduction": "Uma referência, uma peça, um jeito seu de sentir. A criação acontece em conversa com você, do primeiro traço às escolhas do projeto.",
+    "steps": [
+      {
+        "title": "Traga suas referências.",
+        "text": "Compartilhe sua ideia no grupo. Desenvolvemos o projeto junto com você, e cada custom é produzida de forma individual."
+      },
+      {
+        "title": "Sua peça ou uma nova base.",
+        "text": "Você pode enviar uma peça que já tem para transformar. Se a base for encontrada pela loja, o valor dela entra no orçamento do projeto."
+      },
+      {
+        "title": "Um orçamento para a sua ideia.",
+        "text": "Cada criação tem um orçamento próprio, definido pelo projeto e pelas escolhas feitas durante o processo. Combine os detalhes e a forma de pagamento com a gente."
+      },
+      {
+        "title": "O encontro é combinado.",
+        "text": "Depois da finalização, combine a entrega ou retirada diretamente com a loja, incluindo local e horário."
+      }
+    ]
+  },
+  "processImages": [
+    "exposicao-01.jpg",
+    "chediak-03.jpg",
+    "ramemes-01.jpg",
+    "escorpiao-01.jpg",
+    "espera-01.jpg"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "note": "Recortes dos arquivos fornecidos; originais preservados. Sem interface do Instagram e sem os precos das referencias.",
+  "images": [
+    {
+      "source": "Screenshot_1.png",
+      "output": "content/media/destaque-ghellion-costas.png",
+      "crop": {
+        "left": 50,
+        "top": 90,
+        "width": 400,
+        "height": 383
+      }
+    },
+    {
+      "source": "Screenshot_1.png",
+      "output": "content/media/destaque-ghellion-frente.png",
+      "crop": {
+        "left": 248,
+        "top": 473,
+        "width": 251,
+        "height": 325
+      }
+    },
+    {
+      "source": "Screenshot_2.png",
+      "output": "content/media/destaque-paranoico-frente.png",
+      "crop": {
+        "left": 42,
+        "top": 116,
+        "width": 404,
+        "height": 387
+      }
+    },
+    {
+      "source": "Screenshot_8.png",
+      "output": "content/media/destaque-neurose-detalhe.png",
+      "crop": {
+        "left": 7,
+        "top": 0,
+        "width": 499,
+        "height": 759
+      }
+    },
+    {
+      "source": "Screenshot_9.png",
+      "output": "content/media/destaque-imortal-uso.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 498,
+        "height": 748
+      }
+    },
+    {
+      "source": "Screenshot_3.png",
+      "output": "public/brand/custom-paper.webp",
+      "crop": {
+        "left": 0,
+        "top": 75,
+        "width": 497,
+        "height": 180
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "confusao",
+  "slug": "calca-confusao",
+  "name": "Calça Confusão",
+  "description": "Corações, espinhos e linhas que atravessam a peça. Uma composição em preto sobre o branco, com a assinatura Hipersensível ao longo da perna.",
+  "collection": "Hipersensível",
+  "category": "Calças",
+  "featured": true,
+  "images": [
+    {
+      "src": "hipersensivel-01.jpg",
+      "alt": "Calça Confusão branca com coração desenhado, espinhos e detalhes em preto."
+    },
+    {
+      "src": "hipersensivel-02.jpg",
+      "alt": "Verso da Calça Confusão com a palavra Hipersensível e grafismos em preto."
+    }
+  ],
+  "credits": [
+    {
+      "name": "Fotos: @ph_villar",
+      "url": "https://www.instagram.com/ph_villar/"
+    }
+  ],
+  "details": [
+    "Coleção Hipersensível | 26",
+    "Intervenções gráficas na frente e no verso"
+  ],
+  "sourceUrl": "https://www.instagram.com/luzzinterest/p/DZn-9JPkQCe/"
+}

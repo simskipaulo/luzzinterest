@@ -1,0 +1,30 @@
+{
+  "id": "neurose",
+  "slug": "regata-neurose",
+  "name": "Regata Neurose",
+  "description": "Uma frase em traço livre e uma intervenção vermelha no peito. A tensão do desenho encontra espaço numa peça da coleção Hipersensível.",
+  "collection": "Hipersensível",
+  "category": "Regatas",
+  "featured": true,
+  "images": [
+    {
+      "src": "hipersensivel-04.jpg",
+      "alt": "Regata Neurose clara com frase desenhada em preto e uma grande intervenção vermelha no peito."
+    },
+    {
+      "src": "destaque-neurose-detalhe.png",
+      "alt": "Outra vista da Regata Neurose, com iluminação vermelha e detalhe da frase e da intervenção no peito."
+    }
+  ],
+  "credits": [
+    {
+      "name": "Fotos da publicação original: @ph_villar",
+      "url": "https://www.instagram.com/ph_villar/"
+    }
+  ],
+  "details": [
+    "Coleção Hipersensível | 26",
+    "Frase e grafismo no peito"
+  ],
+  "sourceUrl": "https://www.instagram.com/luzzinterest/p/DZn-9JPkQCe/"
+}

@@ -1,0 +1,16 @@
+{
+  "platform": {},
+  "responseOverrides": {
+    "404": { "rewrite": "/404.html", "statusCode": 404 }
+  },
+  "routes": [
+    { "route": "/assets/*", "headers": { "Cache-Control": "public, max-age=31536000, immutable" } },
+    { "route": "/media/*", "headers": { "Cache-Control": "public, max-age=31536000, immutable" } }
+  ],
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "DENY"
+  },
+  "mimeTypes": { ".webp": "image/webp", ".woff2": "font/woff2", ".data": "text/x-script" }
+}

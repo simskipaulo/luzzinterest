@@ -1,0 +1,33 @@
+{
+  "id": "barcellos",
+  "slug": "custom-barcellos",
+  "name": "Custom Barcellos",
+  "description": "Desenhos claros se espalham pelo preto do moletom. Um custom criado para Barcellos, entre referências de horror, ossos e traços que se encontram.",
+  "collection": "Customizações",
+  "category": "Moletons",
+  "featured": true,
+  "images": [
+    {
+      "src": "barcellos-04.jpg",
+      "alt": "Moletom preto customizado para Barcellos com desenho branco nas costas, fotografado em uso."
+    },
+    {
+      "src": "barcellos-05.jpg",
+      "alt": "Detalhe de grafismos claros sobre tecido preto no custom Barcellos."
+    },
+    {
+      "src": "barcellos-03.jpg",
+      "alt": "Detalhe em vermelho na manga do moletom preto customizado."
+    },
+    {
+      "src": "barcellos-06.jpg",
+      "alt": "Vista frontal do moletom preto customizado, fotografado em uso."
+    }
+  ],
+  "credits": [],
+  "details": [
+    "Custom para @barcellossss",
+    "Grafismos em preto, branco e vermelho"
+  ],
+  "sourceUrl": "https://www.instagram.com/luzzinterest/p/DbgadwZkfmD/"
+}

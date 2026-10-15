@@ -1,0 +1,42 @@
+{
+  "id": "midazs",
+  "slug": "camiseta-midazs",
+  "name": "Camiseta Midazs",
+  "description": "Uma criação inspirada no trabalho de Midazs. Grafismos claros e escrita sobre o preto, apresentados em uma composição com a identidade do artista.",
+  "collection": "Customizações",
+  "category": "Camisetas",
+  "featured": false,
+  "images": [
+    {
+      "src": "midazs-04.jpg",
+      "alt": "Camiseta Midazs preta disposta sobre fundo cinza, com desenhos claros e escrita na frente."
+    },
+    {
+      "src": "midazs-03.jpg",
+      "alt": "Outra vista da camiseta Midazs com o desenho central e as letras em contraste sobre o preto."
+    },
+    {
+      "src": "midazs-02.jpg",
+      "alt": "Composição editorial da camiseta Midazs com frente e verso da peça."
+    },
+    {
+      "src": "midazs-06.jpg",
+      "alt": "Desenho de referência publicado junto à criação da camiseta Midazs."
+    }
+  ],
+  "credits": [
+    {
+      "name": "Post design: @ingriidfern",
+      "url": "https://www.instagram.com/ingriidfern/"
+    },
+    {
+      "name": "Post design: @scarlet.mob",
+      "url": "https://www.instagram.com/scarlet.mob/"
+    }
+  ],
+  "details": [
+    "Custom inspirado no trabalho de @midazs092",
+    "Frente e verso apresentados no editorial original"
+  ],
+  "sourceUrl": "https://www.instagram.com/luzzinterest/p/DdFnEaIEeTi/"
+}

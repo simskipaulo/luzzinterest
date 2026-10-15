@@ -1,0 +1,21 @@
+{
+  "id": "paranoico",
+  "slug": "polo-paranoico",
+  "name": "Polo Paranoico",
+  "description": "Uma peça clara com um grafismo circular em preto na frente. Linhas e espirais se espalham a partir do centro do desenho.",
+  "collection": "Customizações",
+  "category": "Polos",
+  "featured": false,
+  "images": [
+    {
+      "src": "destaque-paranoico-frente.png",
+      "alt": "Frente da Polo Paranoico clara, com um desenho circular preto e espirais ao redor."
+    }
+  ],
+  "credits": [],
+  "details": [
+    "Grafismo circular na frente",
+    "Tamanho registrado da peça do acervo: G"
+  ],
+  "sourceUrl": "https://www.instagram.com/stories/highlights/18005616245958680/"
+}

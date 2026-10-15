@@ -1,0 +1,143 @@
+name: Site — validar e publicar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, closed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.event_name != 'pull_request' || github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SITE_URL: ${{ vars.SITE_URL || vars.SWA_PUBLIC_URL }}
+      SWA_PUBLIC_URL: ${{ vars.SWA_PUBLIC_URL }}
+      HAS_SWA_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Configurar .NET
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Testar compilador C# do catálogo
+        run: npm run test:catalog
+
+      - name: Compilar conteúdo, mídia e React com checagem de tipos
+        run: npm run build
+
+      - name: Conferir artefato e quantidade de arquivos
+        shell: python
+        run: |
+          from pathlib import Path
+
+          output = Path("build/client")
+          if not (output / "index.html").is_file():
+              raise SystemExit("build/client/index.html não foi gerado.")
+          files = [path for path in output.rglob("*") if path.is_file()]
+          print(f"Pacote estático: {len(files)} arquivos; tamanho conferido pelo build.")
+          if len(files) > 15000:
+              raise SystemExit("O pacote ultrapassa o limite de 15.000 arquivos do SWA.")
+
+      - name: Instalar Chromium para os testes
+        run: npx playwright install --with-deps chromium
+
+      - name: Testar experiência no navegador
+        run: npm run test:e2e
+
+      - name: Guardar evidências de falhas no navegador
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: playwright-${{ github.run_id }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Verificar configuração da publicação
+        if: env.HAS_SWA_TOKEN == 'true' && ((github.event_name != 'pull_request' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository))
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          const value = process.env.SITE_URL;
+          if (!value) {
+            throw new Error('Defina SITE_URL ou SWA_PUBLIC_URL nas variables do repositório usando o hostname real do Azure. Consulte docs/azure.md.');
+          }
+          const url = new URL(value);
+          if (url.protocol !== 'https:' || url.pathname !== '/' || url.search || url.hash || url.username || url.password) {
+            throw new Error('SITE_URL deve ser uma origem HTTPS pública, sem caminho, query, fragmento ou credenciais.');
+          }
+          JS
+
+      - name: Publicar produção ou preview
+        id: deploy
+        if: env.HAS_SWA_TOKEN == 'true' && ((github.event_name != 'pull_request' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository))
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: build/client
+          api_location: ''
+          output_location: ''
+          skip_app_build: true
+
+      - name: Registrar URL real publicada
+        if: steps.deploy.outputs.static_web_app_url != ''
+        env:
+          DEPLOYED_URL: ${{ steps.deploy.outputs.static_web_app_url }}
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          import { appendFileSync } from 'node:fs';
+          const url = new URL(process.env.DEPLOYED_URL);
+          if (url.protocol !== 'https:') throw new Error('O deploy não retornou uma URL HTTPS.');
+          appendFileSync(process.env.GITHUB_STEP_SUMMARY, `Publicação concluída: ${url.href}\n`);
+          JS
+
+      - name: Registrar validação sem publicação
+        if: env.HAS_SWA_TOKEN != 'true'
+        shell: bash
+        run: echo 'Validação concluída. Configure o segredo AZURE_STATIC_WEB_APPS_API_TOKEN e as variables descritas em docs/azure.md para publicar.' >> "$GITHUB_STEP_SUMMARY"
+
+  close-preview:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HAS_SWA_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN != '' }}
+    steps:
+      - name: Encerrar preview da pull request
+        if: env.HAS_SWA_TOKEN == 'true'
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: close
+          app_location: build/client
+
+      - name: Registrar ausência de ambiente configurado
+        if: env.HAS_SWA_TOKEN != 'true'
+        run: echo 'Nenhum token configurado; não há preview deste workflow para encerrar.' >> "$GITHUB_STEP_SUMMARY"

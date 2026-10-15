@@ -1,0 +1,18 @@
+subscription_id = "SUBSTITUA-PELO-ID-DA-ASSINATURA"
+prefix          = "luzzinterest"
+location        = "eastus2"
+sku             = "Free"
+
+# Nomes opcionais; os recursos serão criados, não reutilizados automaticamente.
+# resource_group_name = "luzzinterest-rg"
+# static_web_app_name = "luzzinterest-web"
+
+# Adicione depois que o site existir e o DNS tiver sido configurado.
+# custom_domain                 = "www.sua-loja.com.br"
+# custom_domain_validation_type = "cname-delegation"
+
+# Para domínio raiz, use "dns-txt-token" e publique o token retornado no DNS.
+
+tags = {
+  environment = "production"
+}

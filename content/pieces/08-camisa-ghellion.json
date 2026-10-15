@@ -1,0 +1,25 @@
+{
+  "id": "ghellion",
+  "slug": "camisa-ghellion",
+  "name": "Camisa Ghellion",
+  "description": "Camisa clara com uma figura em preto nas costas. Na frente, estrelas e outros grafismos acompanham a linha dos botões.",
+  "collection": "Customizações",
+  "category": "Camisas",
+  "featured": true,
+  "images": [
+    {
+      "src": "destaque-ghellion-costas.png",
+      "alt": "Costas da Camisa Ghellion clara, com uma figura desenhada em preto e escrita abaixo da ilustração."
+    },
+    {
+      "src": "destaque-ghellion-frente.png",
+      "alt": "Detalhe da frente da Camisa Ghellion, com botões escuros, estrelas e grafismos pretos."
+    }
+  ],
+  "credits": [],
+  "details": [
+    "Intervenções gráficas na frente e nas costas",
+    "Tamanho registrado da peça do acervo: GG"
+  ],
+  "sourceUrl": "https://www.instagram.com/stories/highlights/18005616245958680/"
+}

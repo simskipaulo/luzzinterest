@@ -1,0 +1,34 @@
+{
+  "id": "imortal",
+  "slug": "jaqueta-imortal",
+  "name": "Jaqueta Imortal",
+  "description": "Nas costas da jaqueta, palavras e um grafismo vertical ocupam o jeans. Um trabalho sobre permanência, pertencente à coleção Hipersensível.",
+  "collection": "Hipersensível",
+  "category": "Jaquetas",
+  "featured": false,
+  "images": [
+    {
+      "src": "hipersensivel-06.jpg",
+      "alt": "Costas da Jaqueta Imortal em jeans azul com texto e grafismo central preto."
+    },
+    {
+      "src": "destaque-imortal-uso.png",
+      "alt": "Jaqueta Imortal em uso, vista de costas, com texto e desenho preto vertical sobre o jeans azul."
+    },
+    {
+      "src": "hipersensivel-07.jpg",
+      "alt": "Detalhe do texto e do desenho preto nas costas da Jaqueta Imortal."
+    }
+  ],
+  "credits": [
+    {
+      "name": "Fotos da publicação original: @ph_villar",
+      "url": "https://www.instagram.com/ph_villar/"
+    }
+  ],
+  "details": [
+    "Coleção Hipersensível | 26",
+    "Texto e desenho nas costas"
+  ],
+  "sourceUrl": "https://www.instagram.com/luzzinterest/p/DZn-9JPkQCe/"
+}
